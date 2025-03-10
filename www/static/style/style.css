@@ -5,6 +5,8 @@ body {
 	font-weight: 300;
 	font-style: normal;
 	font-size: 1.5em;
+	direction: ltr;
+	text-align: left;
 }
 
 h1 {
@@ -167,5 +169,31 @@ pre {
 
 .lang-toggle:checked ~ .lang-container {
 	display: block;
+}
+
+
+[lang="ar"], 
+[lang="fa"] {
+	direction: rtl;
+	text-align: right;
+}
+
+[lang="ar"] .content,
+[lang="fa"] .content {
+	text-align: right;
+}
+
+[lang="ar"] h1,
+[lang="fa"] h1 {
+	text-align: center;
+}
+
+
+[lang="ar"] ol,
+[lang="fa"] ol,
+[lang="ar"] ul,
+[lang="fa"] ul {
+	padding-right: 0;
+	padding-left: 0;
 }
 
