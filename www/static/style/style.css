@@ -1,0 +1,171 @@
+body {
+	background-color: #e8e6f3;
+	font-family: "Rubik", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 1.5em;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	word-wrap: break-word;
+}
+
+h1, h2 {
+	color: #49479d;
+	font-family: "Rubik", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	margin-bottom:0.5em;
+}
+
+.content {
+	margin: auto;
+	max-width: 54em;
+	width: 100%;
+	border: 0.7em solid #49479d;
+	padding: 1em;
+	box-sizing: border-box;
+	margin-bottom: 1em;
+	hyphens: auto;
+}
+
+#nav {
+	margin: auto;
+	max-width: 54em;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 100;
+}
+
+#nav .langsel {
+	padding: 1em;
+	background-color: #49479d;
+	display: block;
+	color: #e8e6f3;
+	cursor: pointer;
+	width: 100%;
+	max-width: 12em;
+	box-sizing: border-box;
+	margin: 1em auto;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+#nav .langsel:hover {
+	background-color: #5d5bb1;
+}
+
+#nav .btn {
+	padding: 1em;
+	background-color: #49479d;
+	display: block;
+	color: #e8e6f3;
+	cursor: pointer;
+	width: 100%;
+	max-width: 15em;
+	box-sizing: border-box;
+	margin: 1em auto;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+#nav .btn::before {
+	content: "Sprache auswählen";
+	position: absolute;
+	left: 0;
+	right: 0;
+	animation: languageRotation 15s linear infinite;
+}
+
+@keyframes languageRotation {
+	0%, 9% {
+		content: "Sprache auswählen";
+	}
+	11%, 20% {
+		content: "Select Language";
+	}
+	22%, 31% {
+		content: "اختر اللغة";
+	}
+	33%, 42% {
+		content: "زبان را انتخاب کنید";
+	}
+	44%, 53% {
+		content: "Dil seçin";
+	}
+	55%, 64% {
+		content: "Виберіть мову";
+	}
+	66%, 75% {
+		content: "Sélectionner la langue";
+	}
+	77%, 86% {
+		content: "Seleccione idioma";
+	}
+	88%, 97% {
+		content: "Выберите язык";
+	}
+}
+
+ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+ol {
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	margin-bottom:1em;     
+}
+
+ol li {
+	margin-bottom:1em;     
+}
+
+img {
+	display:block;
+	margin:auto;
+	
+	margin-bottom:1.5em;
+}
+
+#logo {
+	height:3em;
+}
+
+#cash_card {
+	height:8em;
+	margin-top:2em;
+	margin-bottom:2em;
+}
+
+pre {
+	font-size:0.8em;
+}
+
+.lang-toggle {
+	display: none;
+}
+
+.lang-container {
+	display: none;
+}
+
+.lang-toggle:checked ~ .lang-container {
+	display: block;
+}
+
