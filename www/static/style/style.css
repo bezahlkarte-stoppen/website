@@ -34,6 +34,7 @@ h1, h2 {
 	box-sizing: border-box;
 	margin-bottom: 1em;
 	hyphens: auto;
+	text-align: justify;
 }
 
 #nav {
