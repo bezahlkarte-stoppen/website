@@ -198,3 +198,56 @@ pre {
 	padding-left: 0;
 }
 
+details {
+}
+details[open] {
+  
+}
+details summary {
+  cursor: pointer;
+  color: #e8e6f3;
+  background-color: #49479d;
+  
+  font-family: "Rubik", serif;
+  outline: none;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  list-style: none;
+  padding: 1em;
+  text-align: center;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary::after {
+  content: " ▼";
+  transition: transform 0.2s;
+}
+details[open] summary::after {
+  content: " ▲";
+}
+
+
+details summary .readmore-open {
+  display: none;
+}
+details[open] summary .readmore-closed {
+  display: none;
+}
+details[open] summary .readmore-open {
+  display: inline;
+}
+details summary .readmore-closed {
+  display: inline;
+}
+
+
+
