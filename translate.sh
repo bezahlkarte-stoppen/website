@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # de Deutsch
 # en English
 # ar اَللُّغَةُ اَلْعَرَبِيَّة
