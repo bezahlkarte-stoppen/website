@@ -13,8 +13,6 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR" || exit
 
-source .env
-
 # Deepl
 for l in en tr uk fr es ru; do
 	rm -rf www/$l
