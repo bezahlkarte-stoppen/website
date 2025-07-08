@@ -10,15 +10,21 @@
 # es español
 # ru русский язык
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit
+
+source .env
 
 # Deepl
 for l in en tr uk fr es ru; do
-	rm www/$l/index.html
-	deepl doc -O html -f de -t $l -o www/$l/index.html www/de/index.html
+	rm -rf www/$l
+	mkdir www/$l
+	$DEEPL_CLI doc -O html -f de -t $l -o ../www/$l/index.html ../www/de/index.html
 done
 
 # ChatGPT
 for l in ar fa; do
-	rm www/$l/index.html
-	echo 'Übersetze diese HTML Datei in die Sprache: '"$l"' - Verändere dabei nicht die Struktur des HTML, belasse den Text in HTML Tags mit Attribut translate="no" im Original. Gib ausschließlich das HTML zurück. Benutze kein Markdown für die Ausgabe' | chatgpt -m gpt-4o -n -c www/de/index.html > www/$l/index.html
+	rm -rf www/$l
+	mkdir www/$l
+	$CHATGPT_CLI --track-token-usage=false --model=gpt-4o --role-file ./translate.prompt -p ../www/de/index.html --query "Zielspache: $l" --max-tokens 16384 --context-window 24000  > ../www/$l/index.html
 done
