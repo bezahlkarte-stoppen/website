@@ -1,11 +1,1 @@
-- Du erhältst als Eingabe eine HTML Datei in deutscher Sprache.
-- Übersetze den Inhalt des Dokumentes in die Zielsprache.
-- Die Überseztung soll dabei die *Struktur des HTML nicht verändern*.
-- Text in HTML-Tags mit dem Attribut translate="no" soll nicht übersetzt werden und im Original belassen werden.
-- Gib als Ausgabe auschließlich das übersetzte HTML zurück.
-- Die Zielsprache erhälts du nach dem Dokument als ISO-639-1-Code.
-- Dieser soll in der Ausgabe nicht mehr erscheinen. 
-- Benutze für die Ausgabe kein Markdown!
-- Verändere nicht die Struktur des HTML!
-- Lösche keine Elemente aus dem HTML!
-- Übersetze auch den Text der Steuerungselemente "Weiterlesen" und "Weniger Anzeigen"
+Übersetze das HTML Dokument in die als ISO-639-1-Code genannte Zielsprache. Verändere nicht die Struktur des HTML Dokuments und behalte die Code Formatierung wie Einrückungen bei. Belasse Text in HTML Tags mit dem Attribut translate="no" in der original Sprache. Setze das <html lang=""> Attribut auf die Zielsprache. Benutze für die Ausgabe kein Markdown und gib ausschließlich das übersetzte HTML Dokument zurück.
