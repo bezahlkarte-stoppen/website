@@ -26,6 +26,7 @@ cd "$SCRIPT_DIR" || exit
 
 # Deepl
 error=false
+if false; then
 for l in en tr uk fr es ru; do
 	dst="website/www/$l/index.html"
 	for ((i = 1; i <= $TRIES; i++)); do
@@ -49,17 +50,17 @@ for l in en tr uk fr es ru; do
 
 	$error && echo "ERROR: No success after $TRIES tries" && exit 1
 done
-
+fi
 
 # ChatGPT
 error=false
-for l in ar fa; do
+for l in en tr uk fr es ru ar fa; do
 	dst="website/www/$l/index.html"
 	for ((i = 1; i <= $TRIES; i++)); do
 		echo "[Try $i / $TRIES] Start ChatGPT translation for $l ..."
 		rm -rf website/www/$l
 		mkdir website/www/$l
-		$CHATGPT_CLI --track-token-usage=false --model=gpt-4o --role-file ./translate.prompt -p website/www/de/index.html --query "Zielspache: $l" --max-tokens 16384 --context-window 24000  > $dst
+		$CHATGPT_CLI --temperature=0 --track-token-usage=false --model=gpt-4o --role-file ./translate.prompt -p website/www/de/index.html --query "Zielspache: $l" --max-tokens 16384 --context-window 24000  > $dst
 		if [ $? -eq 0 ]; then
 			if [ -e "$dst"  -a -s "$dst" ]; then
 				echo "Done ChatGPT tanslation for $l"
@@ -76,4 +77,8 @@ for l in ar fa; do
 
 	$error && echo "ERROR: No success after $TRIES tries" && exit 1
 done
+
+echo "DEEPL USAGE:"
+$DEEPL_CLI --usage
+
 exit 0
