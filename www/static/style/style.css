@@ -38,12 +38,16 @@ h1, h2 {
 }
 
 #nav {
-	margin: auto;
-	max-width: 54em;
-	width: 100%;
-	box-sizing: border-box;
-	position: relative;
-	z-index: 100;
+    margin: auto;
+    max-width: 54em;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+    display: flex;           /* Add this */
+    flex-wrap: wrap;         /* Add this */
+    gap: 1em;               /* Add this for spacing between buttons */
+    justify-content: center; /* Add this to center the buttons */
 }
 
 #nav .langsel {
@@ -89,6 +93,22 @@ h1, h2 {
 	animation: languageRotation 15s linear infinite;
 }
 
+#nav .citysel{
+padding: 1em;
+	background-color: #49479d;
+	display: block;
+	color: #e8e6f3;
+	cursor: pointer;
+	width: 100%;
+	max-width: 15em;
+	box-sizing: border-box;
+	margin: 1em auto;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+}
+
 @keyframes languageRotation {
 	0%, 9% {
 		content: "Sprache auswählen";
@@ -120,8 +140,8 @@ h1, h2 {
 }
 
 ul {
-	list-style: none;
-	margin:0;
+	line-height: 1em;
+	margin-left: 40px;
 	padding:0;
 }
 
