@@ -51,14 +51,18 @@ fi
 
 # ChatGPT — recursive translation of all HTML files
 error=false
-for l in en tr uk fr es ru ar fa; do
-    echo "Translating site to $l ..."
-    rm -rf website/www/$l
-    mkdir -p website/www/$l
 
-    find website/www/de -type f -name "*.html" | while read src; do
-        rel="${src#website/www/de/}"
-        dst="website/www/$l/$rel"
+
+
+#for l in en tr uk fr es ru ar fa; do
+for l in en; do
+    echo "Translating site to $l ..."
+
+    mkdir $TMPDIR/$l
+
+    for src in `find $TMPDIR/de -type f -name "*.html"`; do
+        rel="${src#$TMPDIR/de/}"
+        dst="$TMPDIR/$l/$rel"
         mkdir -p "$(dirname "$dst")"
 
         success=false
@@ -75,7 +79,7 @@ for l in en tr uk fr es ru ar fa; do
                 if [ -s "$dst" ]; then
                     echo "Done ChatGPT translation for $src → $dst"
                     success=true
-                    break
+                    i=$TRIES+1
                 else
                     echo "ERROR: Translated file $dst does not exist or is empty."
                 fi
@@ -94,7 +98,7 @@ for l in en tr uk fr es ru ar fa; do
     $error && exit 1
 done
 
-echo "DEEPL USAGE:"
-$DEEPL_CLI --usage
+#echo "DEEPL USAGE:"
+#$DEEPL_CLI --usage
 
 exit 0
