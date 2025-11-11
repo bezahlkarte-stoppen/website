@@ -185,11 +185,16 @@ pre {
 }
 
 .lang-container {
-	display: none;
+    display: none;
+    width: 100%;
+    flex-basis: 100%;
 }
 
 .lang-toggle:checked ~ .lang-container {
-	display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
 }
 
 
