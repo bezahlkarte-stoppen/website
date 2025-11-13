@@ -54,8 +54,8 @@ error=false
 
 
 
-#for l in en tr uk fr es ru ar fa; do
-for l in en; do
+for l in en tr uk fr es ru ar fa; do
+#for l in en; do
     echo "Translating site to $l ..."
 
     mkdir $TMPDIR/$l
