@@ -275,7 +275,6 @@ details summary .readmore-closed {
 }
 
 .preserve {
-  white-space: pre;      
   font-family: monospace;
   font-size: 0.8em;
 }
