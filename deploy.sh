@@ -22,7 +22,6 @@ source .env
 export TMPDIR="../tmp"
 rm -rf $TMPDIR
 mkdir $TMPDIR
-cp -r www/* $TMPDIR
 
 
 PUSH="$WEBROOT/push";
@@ -41,7 +40,7 @@ if [ -f "$PUSH" ]; then
 
 		git checkout $GITHUB_BRANCH
 		git pull
-
+		cp -r www/* $TMPDIR
 
 		./translate.sh
 		if [ $? -ne 0 ]; then
