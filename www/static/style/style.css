@@ -279,5 +279,19 @@ details summary .readmore-closed {
   font-size: 0.8em;
 }
 
+.smallheader {
+	color: #49479d;
+	font-family: "Rubik", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-size: 2em;
+	margin-bottom:0.5em;
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	word-wrap: break-word;
+}
+
 
 
